@@ -1,3 +1,4 @@
+import type { items } from "./ItemData.js"
 
 
 export type Player = {
@@ -6,20 +7,53 @@ export type Player = {
     dateCreated: Date
     lastLogin: number
     overAllSkillLevel: number
-    skills: Skill[]
+    skills: Record<SkillId, PlayerSkill>
     inventory: Inventory[]
+    currentActivity: SkillId | null
 }
-
 export type Item = {
-    id: string
     name: string
     value: number
+    xp: number
+    type: ItemTypes
+    stackable: boolean
+    levelReq?: number
 }
-export type Skill = {
+export type ItemTypes = 
+    'fish' | 'log' | 'ore' | 'bar' | 'crafting' | 'arrow' | 'material'
+
+export type ItemEntry = {
     id: string
-    name: string
+    item: Item
 }
+
 export type Inventory = {
     itemId: string
     quantity: number
 }
+export type PlayerSkill = {
+    id: string
+    name: string
+    xp: number
+    level: number
+}
+export type CraftingRecipe = {
+    input: Record<string, number>
+    output: Record<string, number> 
+}
+export type SkillId = "woodcutting" | 'mining' | 'smithing' | 'crafting' | 'fishing'
+
+export type ItemId = 
+    'oak_log' | 'molded_log' | 'burned_log' | 'aged_log' | 'pine_log'| 'birch_log' | 
+    'maple_log'| 'black_walnut_log'| 'hardwood_log'| 'treated_log'| 'spiritwood_log' |
+    'ancientwood_log' | 'copper_ore'| 'iron_ore'| 'coal_ore'| 'crystal_shard'| 'gold_ore'| 
+    'stone_ore'| 'mythril_ore'| 'ancient_fossil'| 'obsidian_ore'| 'cobalt_ore'| 'tin_ore'|
+    'silver_ore' | 'copper_bar'| 'iron_bar'| 'mythril_bar'|'stone_bar'| 'refined_crystal'| 
+    'silver_bar'| 'tin_bar'| 'cobalt_bar'| 'obsidian_bar'| 'bronze_bar'| 'electrum_bar'| 
+    'crystal_alloy_bar' | 'molded_arrow' | 'simple_arrow' | 'hardened_arrow' | 'refined_arrow' | 
+    'minnow_fish'| 'carp_fish'| 'perch_fish'| 'trout_fish'| 'salmon_fish'| 'reef_fish'|
+    'seabass_fish'| 'sword_fish'| 'golden_fish'| 'dragon_fish'| 'crystal_fish'| 'ancient_fish' |
+    'stone_block' | 'gold_bar'
+
+
+export type SkillHandler = (player: Player) => void

@@ -1,0 +1,21 @@
+{
+  "id": "PL_001",
+  "userName": "Jim",
+  "dateCreated": "2026-04-14T01:19:26.725Z",
+  "lastLogin": 1776129566725,
+  "overAllSkillLevel": 0,
+  "skills": {
+    "Woodcutting": {
+      "id": "woodcutting",
+      "name": "Woodcutting",
+      "xp": 0,
+      "level": 1
+    }
+  },
+  "inventory": [
+    {
+      "itemId": "oak_log",
+      "quantity": 5
+    }
+  ]
+}
