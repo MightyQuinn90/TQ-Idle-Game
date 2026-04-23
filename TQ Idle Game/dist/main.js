@@ -1,8 +1,8 @@
 import readline from "readline";
-import { initLogger } from "./logger.js";
+import { initLogger } from "./Core/logger.js";
 import { handleCommand } from "./devCommands.js";
-import { loadGame } from "./save.js";
-import { mainPlayer } from "./Player.js";
+import { loadGame } from "./Core/save.js";
+import { mainPlayer } from "./types/Player.js";
 // init systems
 initLogger();
 // const loaded = loadGame()

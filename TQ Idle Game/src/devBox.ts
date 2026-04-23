@@ -1,9 +1,10 @@
 import readline from "readline"
-import { gameTick, addItem, removeItem, craftById } from "./idleSystems.js"
-import { mainPlayer } from "./Player.js"
-import { initLogger } from "./logger.js"
-import { saveGame, loadGame } from "./save.js"
-import type { SkillId } from "./types.js"
+import { gameTick, craftById } from "./Systems/idleSystems.js"
+import { addItem, removeItem } from "./Systems/InventorySystems.js"
+import { mainPlayer } from "./types/Player.js"
+import { initLogger } from "./Core/logger.js"
+import { saveGame, loadGame } from "./Core/save.js"
+import type { SkillId } from "./types/types.js"
 //readline
 const rl = readline.createInterface({
   input: process.stdin,

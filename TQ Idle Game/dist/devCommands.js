@@ -1,8 +1,8 @@
-import { startGameLoop, stopGameLoop, runManualTick } from "./gameLoop.js";
-import { mainPlayer } from "./Player.js";
-import { gameTick } from "./idleSystems.js";
-import { gameState } from "./gameState.js";
-import { saveGame, loadGame } from "./save.js";
+import { startGameLoop, stopGameLoop, runManualTick } from "./Core/gameLoop.js";
+import { mainPlayer } from "./types/Player.js";
+import { gameTick } from "./Systems/idleSystems.js";
+import { gameState } from "./Core/gameState.js";
+import { saveGame, loadGame } from "./Core/save.js";
 export function handleCommand(input) {
     const cmd = input.trim().toLowerCase();
     switch (cmd) {
